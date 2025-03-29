@@ -1,63 +1,38 @@
-const selectTag = document.querySelectorAll("select");
-const translateBtn = document.querySelector("#transfer");
-const fromText = document.querySelector("#fromText");
-const toText = document.querySelector("#toText");
-const icons = document.querySelectorAll("img");
-
-
-
-selectTag.forEach((tag , id)=>{
-    
-
-    for (const countriesCode in countries) {
-        let selected ;
-        if( id == 0 && countriesCode == "en-GB"){
-            selected =" selected";
-        }else if(id == 1 && countriesCode == "hi-IN"){
-            selected =" selected";
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
         }
-        let option = ` <option value="${countriesCode}" ${selected}>${countries[countriesCode]}</option>`;
-        tag.insertAdjacentHTML("beforeend", option);
-        }
+    });
 });
 
-translateBtn.addEventListener("click" , ()=> {
-  let Text = fromText.value,
-  translateFrom = selectTag[0].value,
-  translateTo = selectTag[1].value;
-
-  let apiURL= `https://api.mymemory.translated.net/get?q=${Text}!&langpair=${ translateFrom}|${translateTo}`;
-  
-  fetch(apiURL).then(res => res.json()).then(data =>{
-
- 
-    toText.value = data.responseData.translatedText;
-});
- 
-
-});
-
-icons.forEach(icon =>{
-icon.addEventListener( "click" , ({target}) => {
-    if(target.classList.contains("copy") ){
-        if(target.id == "from"){
-           navigator.clipboard.writeText(fromText.value)
-        }
-        else{
-            navigator.clipboard.writeText(toText.value)
-        }
-    }
-    else{
-        let utterance;
-        if(target.id == "from"){
-           utterance = new SpeechSynthesisUtterance(fromText.value)
-           utterance.lang = selectTag[0].value;
-
-        }else{
-            utterance = new SpeechSynthesisUtterance(toText.value)
-            utterance.lang = selectTag[1].value;
-        }
-        speechSynthesis.speak(utterance);
-    }
-});
-});
+// Simple form submission handling
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = this.elements[0].value;
+        const email = this.elements[1].value;
+        const message = this.elements[2].value;
+        
+        // Here you would typically send the data to a server
+        console.log('Form submitted:', { name, email, message });
+        
+        // Show success message
+        alert('Thank you for your message! I will get back to you soon.');
+        
+        // Reset form
+        this.reset();
+    });
+}
