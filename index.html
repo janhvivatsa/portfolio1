@@ -3,35 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TranslateApp</title>
+    <title>Your Name | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <div class="Text">
-            <textarea name="" id="fromText" placeholder="Enter Text"></textarea>
-            <textarea name="" id="toText" placeholder="Translate"></textarea>
+    <header>
+        <div class="container">
+            <h1>Janhvi Vatsa</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="selectArea">
-            <div class="select1">
-                <img src="speaker.svg" alt="" class="speaker" id="from">
-                <img src="copy.svg" alt="" class="copy" id="from">
-                <select name="" id="fselect">
-                  
-                </select>
-            </div>
-            <div class="select2">
-                <img src="speaker.svg" alt="" class="speaker" id="to">
-                <img src="copy.svg" alt="" class="copy" id="to">
-                <select name="" id="sselect">
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Welcome to My Portfolio</h2>
+            <p>Hi, I'm Janhvi, and I'm currently pursuing my BTech. </p>
+            <a href="#work" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                
+                <div class="about-text">
+                    <h3>Hello, I'm Janhvi. </h3>
+                   
                     
-                  
-                </select>
+                    
+                    <div class="skills">
+                        <h4>My Skills:</h4>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        
+                            <!-- Add your skills -->
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        <button id="transfer">Translate</button>
-    </div>
-    <script src="countries.js"></script>
+    </section>
+
+    <section id="work" class="section">
+        <div class="container">
+            <h2>My Work</h2>
+            <div class="projects">
+                <div class="project">
+                    
+                    <h3>Translation app</h3>
+                    <p>This is a translation website and I worked as a frontend develeper in this project.</p>
+                    <a href="https://janhvivatsa.github.io/translation-app/" class="btn">View Project</a>
+                </div>
+                <!-- <div class="project">
+                    <img src="images/project2.jpg" alt="Project 2">
+                    <h3>Project Title 2</h3>
+                    <p>Brief description of the project and your role.</p>
+                    <a href="#" class="btn">View Project</a>
+                </div> -->
+                <!-- Add more projects -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/janhvi-vatsa-35aa9332a/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/janhvivatsa"><i class="fab fa-github"></i></a>
+               
+                <!-- Add your social media -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Janhvi. All rights reserved.</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
